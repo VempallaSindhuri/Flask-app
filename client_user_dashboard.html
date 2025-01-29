@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>User 2 Dashboard</title></head>
+<body>
+    <h1>Client user Dashboard</h1>
+    <h2>Available Files:</h2>
+    <ul>
+        {% for file in files %}
+            <li>
+                <a href="{{ url_for('download_file', token=generate_secure_url(file)) }}">{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
